@@ -20,7 +20,8 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
-    "@microsoft/fluentui-jsx-a11y/no-empty-buttons": "error"
+    "@microsoft/fluentui-jsx-a11y/no-empty-buttons": "error",
+    "@microsoft/fluentui-jsx-a11y/text-area-missing-label-v9": "error"
   },
   "settings": {
     "react": {

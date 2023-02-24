@@ -1,4 +1,4 @@
-import { Button } from "@fluentui/react-components";
+import { Button, Textarea } from "@fluentui/react-components";
 import { CalendarMonthRegular } from '@fluentui/react-icons';
 import * as React from 'react';
 export const App = () => (
@@ -10,5 +10,6 @@ export const App = () => (
       <Button appearance="subtle">Subtle</Button>
       <Button appearance="transparent">Transparent</Button>
       <Button />
+      <Textarea />
   </>
 );
