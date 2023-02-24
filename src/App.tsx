@@ -9,5 +9,6 @@ export const App = () => (
       <Button appearance="outline">Outline</Button>
       <Button appearance="subtle">Subtle</Button>
       <Button appearance="transparent">Transparent</Button>
+      <Button />
   </>
 );
