@@ -3,6 +3,7 @@ import { CalendarMonthRegular } from '@fluentui/react-icons';
 import * as React from 'react';
 export const App = () => (
     <>
+      <Toolbar />
       <div id="address_label">Enter your address</div>
       <Button icon={<CalendarMonthRegular />}></Button>
       <Button appearance="primary">Primary</Button>
@@ -12,6 +13,5 @@ export const App = () => (
       <Button />
       <Textarea />
       <Button icon={<CalendarMonthRegular />} />
-      <Toolbar />
   </>
 );
