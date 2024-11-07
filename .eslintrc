@@ -27,8 +27,9 @@
       "pragma": "React",
       "version": "detect"
     }
-  },     "env": {
+  },     
+  "env": {
     "browser": true,
     "node": true
-}
+  }
 }
