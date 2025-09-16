@@ -1,4 +1,5 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -7,12 +8,14 @@
   "plugins": [
     "@typescript-eslint",
     "react-hooks",
-    "jsx-a11y"
+    "@microsoft/fluentui-jsx-a11y"
   ],
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/strict"
+    "plugin:@typescript-eslint/recommended", 
+    "plugin:@microsoft/fluentui-jsx-a11y/recommended"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
@@ -23,11 +26,10 @@
     "react": {
       "pragma": "React",
       "version": "detect"
-    },
-    "jsx-a11y": {
-      "components": {
-        "Button": "button"
-      }
     }
+  },     
+  "env": {
+    "browser": true,
+    "node": true
   }
 }
