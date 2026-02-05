@@ -15,7 +15,11 @@ const myFunc = (): string => { return "test" };
 
 export const TableTests = () => (
     <>
-        {/* table-needs-labelling tests */}
+        {/* ============================================
+            table-needs-labelling tests
+            ============================================ */}
+        
+        {/* ❌ FAIL: Table without accessible name */}
         <Table>
             <TableHeader>
                 <TableRow>
@@ -31,6 +35,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with aria-label */}
         <Table aria-label="User data table">
             <TableHeader>
                 <TableRow>
@@ -46,6 +51,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with aria-label from variable */}
         <Table aria-label={label}>
             <TableBody>
                 <TableRow>
@@ -54,6 +60,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with aria-label from function */}
         <Table aria-label={myFunc()}>
             <TableBody>
                 <TableRow>
@@ -62,6 +69,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with aria-labelledby */}
         <span id="table-label">Employee List</span>
         <Table aria-labelledby="table-label">
             <TableHeader>
@@ -71,6 +79,7 @@ export const TableTests = () => (
             </TableHeader>
         </Table>
 
+        {/* ❌ FAIL: Table with aria-describedby only - needs primary label */}
         <Table aria-describedby="table-desc">
             <TableBody>
                 <TableRow>
@@ -80,6 +89,7 @@ export const TableTests = () => (
         </Table>
         <p id="table-desc">This table shows employee information</p>
 
+        {/* ❌ FAIL: Table with size but no accessible name */}
         <Table size="small">
             <TableBody>
                 <TableRow>
@@ -88,6 +98,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with size and aria-label */}
         <Table size="small" aria-label="Small table">
             <TableBody>
                 <TableRow>
@@ -96,6 +107,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with size and aria-label */}
         <Table size="extra-small" aria-label="Extra small table">
             <TableBody>
                 <TableRow>
@@ -104,6 +116,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with size and aria-label */}
         <Table size="medium" aria-label="Medium table">
             <TableBody>
                 <TableRow>
@@ -112,6 +125,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Sortable Table with aria-label */}
         <Table sortable aria-label="Sortable table">
             <TableHeader>
                 <TableRow>
@@ -120,6 +134,7 @@ export const TableTests = () => (
             </TableHeader>
         </Table>
 
+        {/* ✅ PASS: Selectable Table with aria-label */}
         <Table aria-label="Selectable table">
             <TableHeader>
                 <TableRow>
@@ -135,6 +150,7 @@ export const TableTests = () => (
             </TableBody>
         </Table>
 
+        {/* ✅ PASS: Table with cell layouts and aria-label */}
         <Table aria-label="Table with cell layouts">
             <TableBody>
                 <TableRow>

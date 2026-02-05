@@ -3,20 +3,28 @@ import * as React from 'react';
 const label = "my-label"; const myFunc = (): string => { return "test"};
 export const SwitchTests = () => (
     <>
-       <Field>
-        <Switch />
-       </Field>
+        {/* ============================================
+            Field component tests
+            ============================================ */}
+        
+        {/* ❌ FAIL: Switch inside Field without label prop */}
+        <Field>
+            <Switch />
+        </Field>
 
-       <Field label="helllo">
-        <Switch />
-       </Field>
+        {/* ✅ PASS: Switch inside Field with label prop */}
+        <Field label="helllo">
+            <Switch />
+        </Field>
 
-       <Field label={myFunc()}>
-        <Switch />
-       </Field>
+        {/* ✅ PASS: Switch inside Field with label from function */}
+        <Field label={myFunc()}>
+            <Switch />
+        </Field>
        
-       <Field label={label}>
-        <Switch />
-       </Field>
+        {/* ✅ PASS: Switch inside Field with label from variable */}
+        <Field label={label}>
+            <Switch />
+        </Field>
     </>      
 );

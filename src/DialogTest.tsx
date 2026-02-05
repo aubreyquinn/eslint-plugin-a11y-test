@@ -15,7 +15,11 @@ const myFunc = (): string => { return "test" };
 
 export const DialogTests = () => (
     <>
-        {/* dialogsurface-needs-aria tests */}
+        {/* ============================================
+            dialogsurface-needs-aria tests
+            ============================================ */}
+        
+        {/* ❌ FAIL: DialogSurface without aria attributes (relies on DialogTitle for labelling) */}
         <Dialog>
             <DialogTrigger>
                 <Button>Open Dialog</Button>
@@ -31,6 +35,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogSurface with aria-label but missing aria-describedby */}
         <Dialog>
             <DialogSurface aria-label="Custom dialog">
                 <DialogBody>
@@ -40,6 +45,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogSurface with aria-label but incomplete DialogBody */}
         <Dialog>
             <DialogSurface aria-label={label}>
                 <DialogBody>
@@ -48,6 +54,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogSurface with aria-labelledby but missing DialogActions */}
         <Dialog>
             <DialogSurface aria-labelledby="dialog-title">
                 <DialogBody>
@@ -57,6 +64,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogSurface with aria-describedby but missing DialogActions */}
         <Dialog>
             <DialogSurface aria-describedby="dialog-desc">
                 <DialogBody>
@@ -66,7 +74,11 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
-        {/* dialogbody-needs-title-content-and-actions tests */}
+        {/* ============================================
+            dialogbody-needs-title-content-and-actions tests
+            ============================================ */}
+        
+        {/* ❌ FAIL: Empty DialogBody - missing title, content, and actions */}
         <Dialog>
             <DialogSurface>
                 <DialogBody>
@@ -74,6 +86,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogBody with title only - missing content and actions */}
         <Dialog>
             <DialogSurface>
                 <DialogBody>
@@ -82,6 +95,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogBody with content only - missing title and actions */}
         <Dialog>
             <DialogSurface>
                 <DialogBody>
@@ -90,6 +104,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ❌ FAIL: DialogBody with actions only - missing title and content */}
         <Dialog>
             <DialogSurface>
                 <DialogBody>
@@ -100,6 +115,7 @@ export const DialogTests = () => (
             </DialogSurface>
         </Dialog>
 
+        {/* ✅ PASS: Complete DialogBody with title, content, and actions */}
         <Dialog>
             <DialogSurface>
                 <DialogBody>

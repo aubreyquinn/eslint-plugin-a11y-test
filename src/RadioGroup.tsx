@@ -4,31 +4,39 @@ const label = "my-label"; const myFunc = (): string => { return "test"};
 
 export const ButtonTests = () => (
     <>
+        {/* ============================================
+            radiogroup-missing-label tests
+            ============================================ */}
 
+        {/* ❌ FAIL: RadioGroup without accessible name */}
         <RadioGroup />
 
+        {/* ✅ PASS: RadioGroup with label prop */}
         <RadioGroup label="my-radio-2">
-                <Radio value="apple" label="Apple" />
-                <Radio value="pear" label="Pear" />
-                <Radio value="banana" label="Banana" />
-                <Radio value="orange" label="Orange" />
-            </RadioGroup>
+            <Radio value="apple" label="Apple" />
+            <Radio value="pear" label="Pear" />
+            <Radio value="banana" label="Banana" />
+            <Radio value="orange" label="Orange" />
+        </RadioGroup>
 
+        {/* ✅ PASS: RadioGroup with aria-labelledby */}
         <Label id="my-radio-2">apple</Label>
         <RadioGroup aria-labelledby="my-radio-2">
-                <Radio value="apple" label="Apple" />
-                <Radio value="pear" label="Pear" />
-                <Radio value="banana" label="Banana" />
-                <Radio value="orange" label="Orange" />
-            </RadioGroup>
+            <Radio value="apple" label="Apple" />
+            <Radio value="pear" label="Pear" />
+            <Radio value="banana" label="Banana" />
+            <Radio value="orange" label="Orange" />
+        </RadioGroup>
 
+        {/* ✅ PASS: RadioGroup with aria-label */}
         <RadioGroup aria-label="avc">
-                <Radio value="apple" label="Apple" />
-                <Radio value="pear" label="Pear" />
-                <Radio value="banana" label="Banana" />
-                <Radio value="orange" label="Orange" />
-            </RadioGroup>
+            <Radio value="apple" label="Apple" />
+            <Radio value="pear" label="Pear" />
+            <Radio value="banana" label="Banana" />
+            <Radio value="orange" label="Orange" />
+        </RadioGroup>
 
+        {/* ✅ PASS: RadioGroup inside Field with label */}
         <Field label="Favorite Fruit">
             <RadioGroup>
                 <Radio value="apple" label="Apple" />
@@ -38,6 +46,7 @@ export const ButtonTests = () => (
             </RadioGroup>
         </Field>
 
+        {/* ✅ PASS: RadioGroup wrapped in Label */}
         <Label>
             Favourite Fruit
             <RadioGroup>
@@ -48,16 +57,18 @@ export const ButtonTests = () => (
             </RadioGroup>
         </Label>
 
+        {/* ✅ PASS: Label with htmlFor pointing to RadioGroup id */}
         <Label htmlFor="my-radio">apple</Label>
         <RadioGroup id="my-radio">
-                <Radio value="apple" label="Apple" />
-                <Radio value="pear" label="Pear" />
-                <Radio value="banana" label="Banana" />
-                <Radio value="orange" label="Orange" />
-            </RadioGroup>
+            <Radio value="apple" label="Apple" />
+            <Radio value="pear" label="Pear" />
+            <Radio value="banana" label="Banana" />
+            <Radio value="orange" label="Orange" />
+        </RadioGroup>
 
 
-        {/* <Radio />
+        {/* Commented out Radio tests - moved to RadioButtonTest.tsx
+        <Radio />
         <Label>hello <Radio /></Label>
         <Radio aria-label="hello" />
         <Field label='xyz'><Radio /></Field>

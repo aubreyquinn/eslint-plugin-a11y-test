@@ -10,32 +10,33 @@ const label = "myLabel"; const myFunc = (): string => { return "test"};
 
 export const ButtonTests = () => (
     <>
+        {/* ============================================
+            breadcrumb-needs-labelling tests
+            ============================================ */}
+        
+        {/* ❌ FAIL: Breadcrumb without accessible name */}
         <Breadcrumb></Breadcrumb>
-<p id={label}></p>
+
+        {/* ✅ PASS: Breadcrumb with aria-labelledby */}
+        <p id={label}></p>
         <Breadcrumb aria-labelledby={label}>
-      <BreadcrumbItem>
-        <BreadcrumbButton href={label}>Item 1</BreadcrumbButton>
-      </BreadcrumbItem>
-     
-    </Breadcrumb>
+            <BreadcrumbItem>
+                <BreadcrumbButton href={label}>Item 1</BreadcrumbButton>
+            </BreadcrumbItem>
+        </Breadcrumb>
 
-
+        {/* ✅ PASS: Breadcrumb with aria-label */}
         <Breadcrumb aria-label="Breadcrumb default example">
-      <BreadcrumbItem>
-        <BreadcrumbButton href={label}>Item 1</BreadcrumbButton>
-      </BreadcrumbItem>
-     
-    </Breadcrumb>
+            <BreadcrumbItem>
+                <BreadcrumbButton href={label}>Item 1</BreadcrumbButton>
+            </BreadcrumbItem>
+        </Breadcrumb>
 
-    <Breadcrumb>
-      <BreadcrumbItem>
-        <BreadcrumbButton href={label}>Item 1</BreadcrumbButton>
-      </BreadcrumbItem>
-
-    </Breadcrumb>
-
-
-
-    
-  </>      
+        {/* ❌ FAIL: Breadcrumb without accessible name */}
+        <Breadcrumb>
+            <BreadcrumbItem>
+                <BreadcrumbButton href={label}>Item 1</BreadcrumbButton>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    </>      
 );

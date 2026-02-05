@@ -23,7 +23,11 @@ const items = [
 
 export const DataGridTests = () => (
     <>
-        {/* datagrid-needs-labelling tests */}
+        {/* ============================================
+            datagrid-needs-labelling tests
+            ============================================ */}
+        
+        {/* ❌ FAIL: DataGrid without accessible name */}
         <DataGrid items={items} columns={columns}>
             <DataGridHeader>
                 <DataGridRow>
@@ -39,6 +43,7 @@ export const DataGridTests = () => (
             </DataGridBody>
         </DataGrid>
 
+        {/* ✅ PASS: DataGrid with aria-label */}
         <DataGrid items={items} columns={columns} aria-label="User data grid">
             <DataGridHeader>
                 <DataGridRow>
@@ -47,6 +52,7 @@ export const DataGridTests = () => (
             </DataGridHeader>
         </DataGrid>
 
+        {/* ✅ PASS: DataGrid with aria-label from variable */}
         <DataGrid items={items} columns={columns} aria-label={label}>
             <DataGridBody>
                 <DataGridRow>
@@ -55,6 +61,7 @@ export const DataGridTests = () => (
             </DataGridBody>
         </DataGrid>
 
+        {/* ✅ PASS: DataGrid with aria-label from function */}
         <DataGrid items={items} columns={columns} aria-label={myFunc()}>
             <DataGridBody>
                 <DataGridRow>
@@ -63,6 +70,7 @@ export const DataGridTests = () => (
             </DataGridBody>
         </DataGrid>
 
+        {/* ✅ PASS: DataGrid with aria-labelledby */}
         <span id="grid-label">Data Table</span>
         <DataGrid items={items} columns={columns} aria-labelledby="grid-label">
             <DataGridBody>
@@ -72,6 +80,7 @@ export const DataGridTests = () => (
             </DataGridBody>
         </DataGrid>
 
+        {/* ❌ FAIL: DataGrid with aria-describedby only - needs primary label */}
         <DataGrid items={items} columns={columns} aria-describedby="grid-desc">
             <DataGridBody>
                 <DataGridRow>
